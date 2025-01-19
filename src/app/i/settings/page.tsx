@@ -1,19 +1,17 @@
 import type { Metadata } from 'next'
 
 import { NO_INDEX_PAGE } from '@/constants/seo.constants'
+import { Settings } from './Settings'
 import { Heading } from '@/components/ui/Heading'
-import { Statistics } from './Statistics'
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
+  title: 'Settings',
   ...NO_INDEX_PAGE
 }
 
-export default function DashboardPage() {
-  return (
-		<div>
-			<Heading title="Statistics" />
-			<Statistics />
-		</div>
-	)
+export default function Page() {
+  return <div>
+    <Heading title='Settings' />
+    <Settings />
+  </div>
 }

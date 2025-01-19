@@ -36,39 +36,41 @@ export function Auth() {
   }
 
   return (
-    <div className='flex min-h-screen'>
-      <form
-        className='w-1/4 m-auto shadow bg-sidebar rounded-xl p-layout'
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <Heading title='Авторизация' />
-        
-        <Field
-          id='email'
-          label='Почта'
-          placeholder='Введите почту'
-          type='email'
-          extra='mb-6'
-          {...register('email', {
-            required: 'Почта обязательна'
-          })}
-        />
+		<div className="flex min-h-screen">
+			<form
+				className="w-1/4 m-auto shadow bg-sidebar rounded-xl p-layout"
+				onSubmit={handleSubmit(onSubmit)}
+			>
+				<Heading title="Авторизация" className='text-center' />
 
-        <Field
-          id='password'
-          label='Пароль'
-          placeholder='Введите пароль'
-          type='password'
-          extra='mb-6'
-          {...register('password', {
-            required: 'Пароль обязателен'
-          })}
-        />
-        <div className='flex items-center justify-center gap-5'>
-          <Button onClick={() => setIsLoginForm(true)}>Войти</Button>
-          <Button onClick={() => setIsLoginForm(false)}>Зарегистрироваться</Button>
-        </div>
-      </form>
-    </div>
-  )
+				<Field
+					id="email"
+					label="Email"
+					placeholder="Enter email"
+					type="email"
+					extra="mb-6"
+					{...register('email', {
+						required: 'Почта обязательна'
+					})}
+				/>
+
+				<Field
+					id="password"
+					label="Password"
+					placeholder="Enter password"
+					type="password"
+					extra="mb-6"
+					{...register('password', {
+						required: 'Пароль обязателен'
+					})}
+				/>
+				<div className="flex items-center justify-center gap-5">
+					<Button onClick={() => setIsLoginForm(true)}>Login</Button>
+					<Button onClick={() => setIsLoginForm(false)}>
+						Register
+					</Button>
+				</div>
+			</form>
+		</div>
+	)
 }
