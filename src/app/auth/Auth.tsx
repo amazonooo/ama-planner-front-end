@@ -28,7 +28,7 @@ export function Auth() {
       toast.success('Успешный вход')
       reset()
       push(DASHBOARD_PAGES.HOME)
-    }
+    },
   })
 
   const onSubmit: SubmitHandler<IAuthForm> = data => {
