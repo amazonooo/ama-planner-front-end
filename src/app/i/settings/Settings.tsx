@@ -2,8 +2,8 @@
 
 import { Button } from '@/components/ui/buttons/Button'
 import { Field } from '@/components/ui/fields/Field'
-import { useInitialData } from '@/hooks/useInitialData'
-import { useUpdateSettings } from '@/hooks/useUpdateSettings'
+import { useInitialData } from '@/hooks/settings/useInitialData'
+import { useUpdateSettings } from '@/hooks/settings/useUpdateSettings'
 import { TypeUserForm } from '@/types/auth.types'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
@@ -83,8 +83,8 @@ export function Settings() {
 
 						<Field
 							id="intervalsCount"
-							label="Interval count (max 10): "
-							placeholder="Enter interval count (max 10): "
+							label="Intervals count (max 10): "
+							placeholder="Enter intervals count (max 10): "
 							isNumber
 							{...register('intervalsCount', {
 								valueAsNumber: true

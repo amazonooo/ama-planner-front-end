@@ -20,9 +20,9 @@ export function Sidebar() {
 					<GanttChartSquare color={COLORS.primary} size={38} />
 					<span className="text-xl font-bold relative">
 						AMA Planner
-						<span className="absolute -top-1.5 -right-6 text-xs opacity-40 rotate-[18deg] font-normal">
+						{/* <span className="absolute -top-1.5 -right-6 text-xs opacity-40 rotate-[18deg] font-normal">
 							beta
-						</span>
+						</span> */}
 					</span>
 				</Link>
 				<div className="p-3 relative">

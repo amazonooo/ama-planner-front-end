@@ -1,7 +1,7 @@
 'use client'
 
 import Loader from '@/components/ui/Loader'
-import { useProfile } from '@/hooks/useProfile'
+import { useProfile } from '@/hooks/profile/useProfile'
 
 export function Statistics() {
   const { data, isLoading } = useProfile()
