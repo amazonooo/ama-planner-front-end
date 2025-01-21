@@ -19,7 +19,7 @@ export default function Home() {
 				</Link>
 			</div>
 			<Link href={'/i'}>
-				<Button>Dashboard</Button>
+				<Button>Start</Button>
 			</Link>
 		</div>
 	)

@@ -38,6 +38,7 @@ export default function RootLayout({
 
           <Toaster 
             theme='dark'
+            richColors
             position='bottom-right'
             duration={1500}
           />
