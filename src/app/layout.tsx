@@ -6,6 +6,7 @@ import './globals.scss'
 import { SITE_NAME } from '@/constants/seo.constants'
 import { Providers } from './providers'
 import { Toaster } from 'sonner'
+import { ThemeProvider } from '@/components/ui/theme/theme-provider'
 
 const zen = Noto_Sans({
 	subsets: ['cyrillic', 'latin'],
@@ -29,21 +30,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${zen.className} antialiased`}
-      >
-        <Providers>
-          {children}
+		<html lang="en">
+			<body className={`${zen.className} antialiased`}>
+				<Providers>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange
+					>
+						{children}
 
-          <Toaster 
-            theme='dark'
-            richColors
-            position='bottom-right'
-            duration={1500}
-          />
-        </Providers>
-      </body>
-    </html>
-  );
+						<Toaster
+							theme="dark"
+							richColors
+							position="bottom-right"
+							duration={1500}
+						/>
+					</ThemeProvider>
+				</Providers>
+			</body>
+		</html>
+	)
 }

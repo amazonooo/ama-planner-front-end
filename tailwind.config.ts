@@ -3,7 +3,7 @@ import type { Config } from 'tailwindcss'
 import { COLORS } from './src/constants/color.constants'
 
 const config: Config = {
-	darkMode: 'class',
+	darkMode: ['class', 'class'],
 	mode: 'jit',
 	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,9 +12,11 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			colors: COLORS,
+			colors: {
+				COLORS
+			},
 			spacing: {
-				0.5: '0.12rem',
+				'0.5': '0.12rem',
 				layout: '1.4rem',
 				'big-layout': '2.3rem'
 			},
@@ -147,32 +149,52 @@ const config: Config = {
 				inset: 'inset 0px 18px 22px',
 				darkinset: '0px 4px 4px inset'
 			},
-			backgroundImage: {
-				ballanceDashboard: "url('/src//public/img/dashboards/balanceImg.png')",
-				ellispisModeCarInterface:
-					"url('https://i.ibb.co/Y3nrFfd/elipse-light.png')",
-				ellispisModeCarInterfaceDark:
-					"url('https://i.ibb.co/g66yJnm/Ellipse-94.png')",
-				homeButton:
-					'linear-gradient(112.83deg, rgba(255, 255, 255, 0.52) 0%, rgba(255, 255, 255, 0) 110.84%)',
-				smartHomeDropzone: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='13' ry='13' stroke='%23E0E5F2FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='5' stroke-linecap='square'/%3e%3c/svg%3e")`
+			// backgroundImage: {
+			// 	'100': '%25',
+			// 	ballanceDashboard: 'url('/src',
+			// 	ellispisModeCarInterface: 'url(',
+			// 	https: 'ellispisModeCarInterfaceDark',
+			// 	'url(': 'https',
+			// 	homeButton: 'linear-gradient(112.83deg, rgba(255, 255, 255, 0.52) 0%, rgba(255, 255, 255, 0) 110.84%)',
+			// 	smartHomeDropzone: '`url("data:image/svg+xml,%3csvg width=',
+			// 	' height=': '100%25',
+			// 	' xmlns=': 'http'
+			// },
+			borderRadius: {
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)'
 			}
 		},
 		screens: {
 			sm: '576px',
-			'sm-max': { max: '576px' },
+			'sm-max': {
+				max: '576px'
+			},
 			md: '768px',
-			'md-max': { max: '768px' },
+			'md-max': {
+				max: '768px'
+			},
 			lg: '992px',
-			'lg-max': { max: '992px' },
+			'lg-max': {
+				max: '992px'
+			},
 			xl: '1200px',
-			'xl-max': { max: '1200px' },
+			'xl-max': {
+				max: '1200px'
+			},
 			'2xl': '1320px',
-			'2xl-max': { max: '1320px' },
+			'2xl-max': {
+				max: '1320px'
+			},
 			'3xl': '1600px',
-			'3xl-max': { max: '1600px' },
+			'3xl-max': {
+				max: '1600px'
+			},
 			'4xl': '1850px',
-			'4xl-max': { max: '1850px' }
+			'4xl-max': {
+				max: '1850px'
+			}
 		},
 		colors: {
 			white: '#ffffff',
@@ -446,6 +468,6 @@ const config: Config = {
 			}
 		}
 	},
-	plugins: []
+	plugins: [require('tailwindcss-animate')]
 }
 export default config
